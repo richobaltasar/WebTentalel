@@ -1,0 +1,54 @@
+﻿@model FormMasterData
+@{
+    WebTentakel.Lib.Global f = new WebTentakel.Lib.Global();
+    Model.Template = f.GetFormLayout("Form Vendor Registrasi");
+    int count = Model.Template.Count();
+    ViewBag.ColField = 3;
+
+    <link rel="stylesheet" type="text/css" href="~/dist/css/bootstrap-select.min.css">
+    <script src="~/dist/js/bootstrap-select.min.js"></script>
+    <script src="~/assets/node_modules/moment/moment.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="~/assets/node_modules/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css">
+    <script src="~/assets/node_modules/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="~/dist/css/dropify.css">
+    <script src="~/dist/js/dropify.js"></script>
+
+    <script src="~/dist/js/autoNumeric.min.js"></script>
+
+
+    <div class="row">
+        @{
+            int a = 12 / ViewBag.ColField;
+            foreach (var d in Model.Template)
+            {
+                if (Model.dbContext != null)
+                {
+                    d.ValueInput = f.GetPropValue(Model.dbContext, d.Id.Trim());
+                }
+
+                <div class="col-md-@a" @{if (d.ShowHide != "Show") { <text> hidden="hidden" </text>  } }>
+                    <div class="form-group">
+                        <label class="control-label">
+                            @{
+                                if (d.Mandatory == "1")
+                                {
+                                    @Html.Raw("*" + d.TextLabel);
+                                }
+                                else
+                                {
+                                    @d.TextLabel
+                                }
+                            }
+
+                        </label>
+                        @await Html.PartialAsync("_LayoutTypeInput", d)
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+
+}

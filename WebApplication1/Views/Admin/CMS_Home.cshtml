@@ -1,0 +1,240 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+}
+
+    <style type="text/css">
+
+    .wrapper {
+        position: relative;
+        display: flex;
+        min-width: 100px;
+        padding-left: 0px;
+    }
+
+    .search-icon {
+        position: absolute;
+        top: 6px;
+        left: 5px;
+        width: 14px;
+    }
+
+    .clear-icon {
+        position: absolute;
+        top: 8px;
+        right: 15px;
+        width: 10px;
+        cursor: pointer;
+        <!-- visibility: hidden; -->
+    }
+
+    .search {
+        border: 0.5px solid #909090;
+        border-radius: 5px;
+        height: 25px;
+        width: 100%;
+        padding: 2px 23px 2px 30px;
+        outline: 0;
+        background-color: #ffffff;
+    }
+
+        .search:hover, .search:focus {
+            border: 1px solid #504095;
+            background-color: white;
+        }
+
+
+  #home {
+    padding: 0;
+  }
+
+  #home h1 {
+    color: #ffffff;
+  }
+
+  #home h3 {
+    color: #f9f9f9;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    padding: 5px 0 40px 0;
+  }
+
+  @@media (min-width: 768px) {
+    .home-slider .col-md-6 {
+      padding-left: 0;
+    }
+  }
+
+    .home-slider .col-md-6 h3 {
+        text-align: justify;
+    }
+
+  .home-slider .caption {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    background-color: rgba(20,20,20,0.2);
+    height: 100%;
+    color: #fff;
+    cursor: e-resize;
+  }
+
+  .home-slider .item {
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: cover;
+    height: 650px;
+  }
+
+  .caption h3 a { color: #FFF; }
+  .caption h3 a:hover { color: #FF3; }
+
+  .home-slider .item-first {
+
+	background-position: center;
+  }
+
+  .home-slider .item-second {
+
+  }
+
+  .home-slider .item-third {
+    background-image: url(../images/slider-image3.jpg);
+  }
+
+        .caption h1{
+            font-size:x-large;
+        }
+        .caption h3 {
+            font-size: medium;
+        }
+
+        .section-btn {
+            background: transparent;
+            border-radius: 50px;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            font-size: inherit;
+            font-weight: normal;
+            padding: 15px 30px;
+            transition: 0.5s;
+        }
+
+            .section-btn:hover {
+                background: #ffffff;
+                border-color: transparent;
+            }
+
+</style>
+
+@model HomeBannerModel
+
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Home Banner</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Website Official</a></li>
+                <li class="breadcrumb-item active">Home Banner</li>
+            </ol>
+            <a href="@Url.Action("CMS_Home_Form", "Admin", new { Id = 0 })" class="btn btn-info d-none d-lg-block m-l-15" style="color:white;">
+                <i class="fa fa-plus-circle"></i> New Banner
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 wrapper" style="max-width:370px;text-align: center;padding-bottom:10px;padding-top:-10px;">
+        <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+        <input class="search" placeholder="Search" type="text" style="font-size:small;">
+        <img class="clear-icon"
+             src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="
+             style="visibility:hidden;" />
+    </div>
+</div>
+
+
+    <div class="row">
+        <div class="owl-carousel owl-theme home-slider">
+            @{
+                if (Model.ListBanner != null)
+                {
+
+                    foreach (var data in Model.ListBanner)
+                    {
+                        <div class="item" style="background-image: url(../@data.Image);">
+                            <span style="float:right;padding:10px 10px 10px 10px;">
+                                <a href="@Url.Action("CMS_Home_Form", "Admin", new {Id=data.Id })"><i class="fa fa-edit" style="color:white;"></i></a>
+                                <span><a href="#"><i class="fa fa-trash-o" style="color:white;"></i></a></span>
+                            </span>
+                            <div class="caption">
+                                <div class="container">
+                                    <div class="col-md-6 col-sm-12">
+                                        @Html.Raw(data.Text)
+                                        @Html.Raw(data.Button)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div> 
+    </div>
+
+
+<script type="text/javascript">
+    (function ($) {
+
+        "use strict";
+
+        $('.home-slider').owlCarousel({
+            animateOut: 'fadeOut',
+            loop: true,
+            autoplayHoverPause: false,
+            autoplay: true,
+            smartSpeed: 1000,
+            dots: false,
+            nav: true,
+            navText: [
+                '<i class="fa fa-angle-left"></i>',
+                '<i class="fa fa-angle-right"></i>'
+            ],
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                1000: {
+                    items: 1,
+                }
+            }
+        });
+
+
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    const clearIcon = document.querySelector(".clear-icon");
+    const searchBar = document.querySelector(".search");
+
+    searchBar.addEventListener("keyup", () => {
+        if (searchBar.value && clearIcon.style.visibility != "visible") {
+            clearIcon.style.visibility = "visible";
+        } else if (!searchBar.value) {
+            clearIcon.style.visibility = "hidden";
+        }
+    });
+
+    clearIcon.addEventListener("click", () => {
+        searchBar.value = "";
+        clearIcon.style.visibility = "hidden";
+    })
+
+
+
+</script>

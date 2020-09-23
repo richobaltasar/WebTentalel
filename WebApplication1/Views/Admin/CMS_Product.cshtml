@@ -1,0 +1,344 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+}
+
+<style type="text/css">
+    .wrapper {
+        position: relative;
+        display: flex;
+        min-width: 100px;
+        padding-left: 0px;
+    }
+
+    .search-icon {
+        position: absolute;
+        top: 6px;
+        left: 5px;
+        width: 14px;
+    }
+
+    .clear-icon {
+        position: absolute;
+        top: 8px;
+        right: 15px;
+        width: 10px;
+        cursor: pointer;
+        <!-- visibility: hidden; -->
+    }
+
+    .search {
+        border: 0.5px solid #909090;
+        border-radius: 5px;
+        height: 25px;
+        width: 100%;
+        padding: 2px 23px 2px 30px;
+        outline: 0;
+        background-color: #ffffff;
+    }
+
+        .search:hover, .search:focus {
+            border: 1px solid #ca295f;
+            background-color: white;
+        }
+
+    #product .section-title {
+        text-align: center;
+    }
+
+    #product .owl-theme .owl-nav {
+        margin-top: 30px;
+    }
+
+        #product .owl-theme .owl-nav [class*=owl-] {
+            border-radius: 2px;
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0;
+        }
+
+    .product-thumb {
+        background: #f9f9f9;
+        position: relative;
+    }
+
+    .product-top {
+        position: relative;
+    }
+
+    .product-image {
+        background: linear-gradient(to right, #202020, #101010);
+    }
+
+    .product-date {
+        background: linear-gradient(rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.6));
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 20px 25px;
+    }
+
+        .product-date span,
+        .product-author span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .product-date span {
+            color: #ffffff;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+    .product-detail {
+        padding: 25px 25px 15px 25px;
+    }
+
+        .product-detail h3 {
+            margin: 0 0 2px 0;
+        }
+
+    .product-info {
+        border-top: 1px solid #f0f0f0;
+        position: relative;
+        clear: both;
+        padding: 15px 25px;
+    }
+
+    .product-author,
+    .product-author span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+        .product-author img {
+            display: inline-block !important;
+            border-radius: 50px;
+            width: 50px !important;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+    .product-price {
+        float: right;
+        margin-top: 10px;
+    }
+
+        .product-price span {
+            background: #29ca8e;
+            border-radius: 2px;
+            color: #ffffff;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .product-price.free span {
+            background: #3f51b5;
+        }
+
+
+
+
+</style>
+
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Product</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Website Official</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+            <a href="@Url.Action("CMS_Product_Form", "Admin", new { a = 0 })" class="btn btn-info d-none d-lg-block m-l-15" style="color:white;">
+                <i class="fa fa-plus-circle"></i> New Product
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="section-title">
+    <div class="col-sm-6 wrapper" style="max-width:370px;text-align: center;padding-bottom:10px;padding-top:-10px;">
+        <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+        <input class="search" placeholder="Search" type="text">
+        <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+    </div>
+</div>
+<div class="container">
+    
+    <div class="row">
+        <div class="owl-carousel owl-theme owl-product">
+            <div class="item">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="product-thumb">
+                            <div class="product-top">
+                                <div class="product-image">
+                                    <img src="~/fileLandingPage/product/access-control.jpg" style="height:235px;" />
+                                </div>
+                                <div class="product-date">
+                                    <a href="@Url.Action("CMS_Product_Form","Admin",new { a = 1 })"><i class="fa fa-edit" style="color:white;"></i></a>
+                                    <span><a href="#"><i class="fa fa-trash-o" style="color:white;"></i></a></span>
+                                </div>
+                            </div>
+
+                            <div class="product-detail">
+                                <h3><a href="#">Security Access</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-author" style="overflow-y:scroll;">
+                                    <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="">
+                                    <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="" style="margin-left:-20px;">
+                                    ...
+                                </div>
+                                <div class="product-price">
+                                    <a href="#"><span>more item</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="product-thumb">
+                            <div class="product-top">
+                                <div class="product-image">
+                                    <img src="~/fileLandingPage/product/access-control.jpg" style="height:235px;" />
+                                </div>
+                                <div class="product-date">
+                                    <a href="@Url.Action("CMS_Product_Form","Admin",new { a = 1 })"><i class="fa fa-edit" style="color:white;"></i></a>
+                                    <span><a href="#"><i class="fa fa-trash-o" style="color:white;"></i></a></span>
+                                </div>
+                            </div>
+
+                            <div class="product-detail">
+                                <h3><a href="#">Security Access</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-author" style="overflow-y:scroll;">
+                                    <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="">
+                                    <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="" style="margin-left:-20px;">
+                                    ...
+                                </div>
+                                <div class="product-price">
+                                    <a href="#"><span>more item</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="product-thumb">
+                            <div class="product-top">
+                                <div class="product-image">
+                                    <img src="~/fileLandingPage/product/access-control.jpg" style="height:235px;" />
+                                </div>
+                                <div class="product-date">
+                                    <a href="@Url.Action("CMS_Product_Form","Admin",new { a = 1 })"><i class="fa fa-edit" style="color:white;"></i></a>
+                                    <span><a href="#"><i class="fa fa-trash-o" style="color:white;"></i></a></span>
+                                </div>
+                            </div>
+
+                            <div class="product-detail">
+                                <h3><a href="#">Security Access</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-author" style="overflow-y:scroll;">
+                                    <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="">
+                                    <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="" style="margin-left:-20px;">
+                                    ...
+                                </div>
+                                <div class="product-price">
+                                    <a href="#"><span>more item</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="product-thumb">
+                            <div class="product-top">
+                                <div class="product-image">
+                                    <img src="~/fileLandingPage/product/access-control.jpg" style="height:235px;" />
+                                </div>
+                                <div class="product-date">
+                                    <a href="@Url.Action("CMS_Product_Form","Admin",new { a = 1 })"><i class="fa fa-edit" style="color:white;"></i></a>
+                                    <span><a href="#"><i class="fa fa-trash-o" style="color:white;"></i></a></span>
+                                </div>
+                            </div>
+
+                            <div class="product-detail">
+                                <h3><a href="#">Security Access</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-author" style="overflow-y:scroll;">
+                                    <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="">
+                                    <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="" style="margin-left:-20px;">
+                                    ...
+                                </div>
+                                <div class="product-price">
+                                    <a href="#"><span>more item</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    (function ($) {
+
+        "use strict";
+
+        $('.owl-product').owlCarousel({
+            animateOut: 'fadeOut',
+            loop: true,
+            autoplayHoverPause: false,
+            autoplay: true,
+            smartSpeed: 1000,
+            dots: false,
+            nav: true,
+            navText: [
+                '<i class="fa fa-angle-left"></i>',
+                '<i class="fa fa-angle-right"></i>'
+            ],
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                1000: {
+                    items: 3,
+                }
+            }
+        });
+
+
+    })(jQuery);
+</script>

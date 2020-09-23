@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/assets1/images/Logo.ico">
+    <link href="~/vendors/morrisjs/morris.css" rel="stylesheet" />
+    <link href="~/assets2/css/ecommerce.css" rel="stylesheet" />
+
+    <link href="~/assets2/css/style.css" rel="stylesheet" />
+
+    <script src="~/vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/vendors/popper/popper.min.js"></script>
+    <script src="~/vendors/bootstrap/bootstrap.min.js"></script>
+
+    <script src="~/assets2/js/waves.js"></script>
+    <script src="~/assets2/js/sidebarmenu.js"></script>
+    <script src="~/vendors/sticky-kit-master/sticky-kit.min.js"></script>
+    <script src="~/vendors/sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/assets2/js/custom.min.js"></script>
+    <script src="~/vendors/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/vendors/raphael/raphael-min.js"></script>
+    <script src="~/vendors/morrisjs/morris.min.js"></script>
+    <script src="~/assets2/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/7e6fa35aa3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+</head>
+<body class="skin-purple-dark fixed-layout">
+    
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Elite admin</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        @await Html.PartialAsync("_Admin_TopBar", null)
+        @await Html.PartialAsync("_Admin_Left_Sidebar", null)
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                @await Html.PartialAsync("_Admin_Page_Titles", null)
+                @await Html.PartialAsync("_Admin_Right_Sidebar", null)
+                @RenderBody()
+            </div>
+        </div>
+        
+        @await Html.PartialAsync("_Admin_Footer", null)
+
+    </div>
+
+</body>
+</html>

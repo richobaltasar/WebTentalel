@@ -1,0 +1,626 @@
+﻿@{
+    ViewData["Title"] = "Home - ";
+
+}
+
+@model landingPageModel
+    <!-- HOME -->
+<section id="home">
+    <div class="row">
+        <div class="owl-carousel owl-theme home-slider">
+            @foreach (var home in Model.Home)
+            {
+                <div class="item" style="background-image: url(../@home.Image);">
+                    <div class="caption">
+                        <div class="container">
+                            <div class="col-md-6 col-sm-12">
+                                @Html.Raw(home.Text)
+                                @Html.Raw(home.Button)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- FEATURE -->
+<section id="feature">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="feature-thumb">
+                    <span><i class="fas fa-infinity"></i></span>
+                    <h3>IT Solution</h3>
+                    <p style="text-align:justify;">Small and mid-sized businesses need to be efficient to be competitive. At Tentakel, we deal in efficiency. We provide comprehensive IT Consulting services to companies that are looking to leverage their company's IT into higher degrees of productivity, and ultimately, profitability.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                <div class="feature-thumb">
+                    <span><i class="fas fa-industry"></i></span>
+                    <h3>Automation Solution</h3>
+                    <p  style="text-align:justify;">As the nature of work has changed, so too have the methods of automation. Robotic process and intelligent automation tools can help businesses improve the effectiveness of services faster and at a lower cost than current methods, but with important limitations. We help navigate those complexities.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                <div class="feature-thumb">
+                    <span><i class="fas fa-landmark"></i></span>
+                    <h3>Fintech Solution</h3>
+                    <p style="text-align:justify;">
+                        Payment technology and innovation that aims to evolve traditional payment methods to become new fast, secure and trusted way of transaction. It is an emerging industry that uses technology to improve activities in finance.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="about-info">
+                    <h2>Start your journey to a better your business with Tentakel Solution</h2>
+                    <figure>
+                        <span><i class="fas fa-assistive-listening-systems"></i></span>
+                        <figcaption>
+                            <h3>Integration System Solution</h3>
+                            <p>Helping companies exploit IT by giving them the full range of product & services integration for their business needs, leveraging on its wide portfolio of products from leading IT vendors</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <span><i class="fas fa-code"></i></span>
+                        <figcaption>
+                            <h3>IT Professional Engineer & Consultant</h3>
+                            <p>
+                                Backed by the industry’s experienced & dedicated professionals, ServBridge designs builds and supports organizations and users through
+                            </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <span><i class="fas fa-industry"></i></span>
+                        <figcaption>
+                            <h3>Industrial Automation Engineer & Consultant</h3>
+                            <p>
+                                Backed by a quality team of experienced design and innovative engineers. Not only providing solutions,
+                                but suggest more innovative application for long term investment of industrial automation.
+                            </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <span><i class="fa fa-bank"></i></span>
+                        <figcaption>
+                            <h3>FinTech Solutions</h3>
+                            <p>
+                                Finance technology is developing quickly and it is becoming ever easier for new providers to enter the market and offer a variety of banking and financial services. 
+                                This in turn changes the behaviour of consumers and how they use services. Knowit provides its customers with tentake'l solutions from system to application. 
+                                We help you to keep up with developments!
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="entry-form" style="background: url(../fileLandingPage/header-slider/servicespic1.png);">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Product -->
+<section id="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title" style="padding-bottom:0px;">
+                    <h2>Our Product <small>Catch up our product and get more benefits</small></h2>
+                </div>
+                <div class="col-sm-6 wrapper" style="max-width:370px;text-align: center;padding-bottom:10px;padding-top:-10px;">
+                    <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                    <input class="search" placeholder="Search" type="text">
+                    <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-12 col-sm-12">
+                <div class="owl-carousel owl-theme owl-product">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="product-thumb">
+                                <div class="product-top">
+                                    <div class="product-image">
+                                        <img src="~/fileLandingPage/product/access-control.jpg" style="height:235px;" />
+                                    </div>
+                                    <div class="product-date">
+                                        <span><i class="fa fa-gavel"></i> Security Access</span>
+                                        <span><i class="fa fa-clock-o"></i> 7 product</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-detail">
+                                    <h3><a href="#">Security Access</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="product-info">
+                                    <div class="product-author" style="overflow-y:scroll;">
+                                        <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="">
+                                        <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="" style="margin-left:-20px;">
+                                        ...
+                                    </div>
+                                    <div class="product-price">
+                                        <a href="#"><span>more item</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="product-thumb">
+                                <div class="product-top">
+                                    <div class="product-image">
+                                        <img src="~/assets1/images/courses-image2.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="product-date">
+                                        <span><i class="fa fa-calendar"></i> 20 / 7 / 2018</span>
+                                        <span><i class="fa fa-clock-o"></i> 4.5 Hours</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-detail">
+                                    <h3><a href="#">Graphic & Web Design</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="product-info">
+                                    <div class="product-author">
+                                        <img src="~/assets1/images/author-image2.jpg" class="img-responsive" alt="">
+                                        <span>Jessica</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <a href="#"><span>USD 80</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="product-thumb">
+                                <div class="product-top">
+                                    <div class="product-image">
+                                        <img src="~/assets1/images/courses-image3.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="product-date">
+                                        <span><i class="fa fa-calendar"></i> 15 / 8 / 2018</span>
+                                        <span><i class="fa fa-clock-o"></i> 6 Hours</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-detail">
+                                    <h3><a href="#">Marketing Communication</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="product-info">
+                                    <div class="product-author">
+                                        <img src="~/assets1/images/author-image3.jpg" class="img-responsive" alt="">
+                                        <span>Catherine</span>
+                                    </div>
+                                    <div class="product-price free">
+                                        <a href="#"><span>Free</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="product-thumb">
+                                <div class="product-top">
+                                    <div class="product-image">
+                                        <img src="~/assets1/images/courses-image4.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="product-date">
+                                        <span><i class="fa fa-calendar"></i> 10 / 8 / 2018</span>
+                                        <span><i class="fa fa-clock-o"></i> 8 Hours</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-detail">
+                                    <h3><a href="#">Summer Kids</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="product-info">
+                                    <div class="product-author">
+                                        <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="">
+                                        <span>Mark Wilson</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <a href="#"><span>USD 45</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="product-thumb">
+                                <div class="product-top">
+                                    <div class="product-image">
+                                        <img src="~/assets1/images/courses-image5.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="product-date">
+                                        <span><i class="fa fa-calendar"></i> 5 / 10 / 2018</span>
+                                        <span><i class="fa fa-clock-o"></i> 10 Hours</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-detail">
+                                    <h3><a href="#">Business &amp; Management</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="product-info">
+                                    <div class="product-author">
+                                        <img src="~/assets1/images/author-image2.jpg" class="img-responsive" alt="">
+                                        <span>Jessica</span>
+                                    </div>
+                                    <div class="product-price free">
+                                        <a href="#"><span>Free</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Solution -->
+<section id="solution">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title">
+                    <h2>Our solution <small>Upgrade your business with our solution</small></h2>
+                    <div class="col-sm-6 wrapper" style="max-width:370px;text-align: center;padding-bottom:10px;padding-top:-10px;">
+                        <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                        <input class="search" placeholder="Search" type="text">
+                        <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                    </div>
+                </div>
+                <div class="owl-carousel owl-theme owl-solution">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="solution-thumb">
+                                <div class="solution-top">
+                                    <div class="solution-image">
+                                        <img src="~/assets1/images/courses-image1.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="solution-date">
+                                        <span><i class="fa fa-calendar"></i> 12 / 7 / 2018</span>
+                                        <span><i class="fa fa-clock-o"></i> 7 Hours</span>
+                                    </div>
+                                </div>
+
+                                <div class="solution-detail">
+                                    <h3><a href="#">Social Media Management</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="solution-info">
+                                    <div class="solution-author">
+                                        <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="">
+                                        <span>Mark Wilson</span>
+                                    </div>
+                                    <div class="solution-price">
+                                        <a href="#"><span>USD 25</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="solution-thumb">
+                                <div class="solution-top">
+                                    <div class="solution-image">
+                                        <img src="~/assets1/images/courses-image2.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="solution-date">
+                                        <span><i class="fa fa-calendar"></i> 20 / 7 / 2018</span>
+                                        <span><i class="fa fa-clock-o"></i> 4.5 Hours</span>
+                                    </div>
+                                </div>
+
+                                <div class="solution-detail">
+                                    <h3><a href="#">Graphic & Web Design</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="solution-info">
+                                    <div class="solution-author">
+                                        <img src="~/assets1/images/author-image2.jpg" class="img-responsive" alt="">
+                                        <span>Jessica</span>
+                                    </div>
+                                    <div class="solution-price">
+                                        <a href="#"><span>USD 80</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="solution-thumb">
+                                <div class="solution-top">
+                                    <div class="solution-image">
+                                        <img src="~/assets1/images/courses-image3.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="solution-date">
+                                        <span><i class="fa fa-calendar"></i> 15 / 8 / 2018</span>
+                                        <span><i class="fa fa-clock-o"></i> 6 Hours</span>
+                                    </div>
+                                </div>
+
+                                <div class="solution-detail">
+                                    <h3><a href="#">Marketing Communication</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="solution-info">
+                                    <div class="solution-author">
+                                        <img src="~/assets1/images/author-image3.jpg" class="img-responsive" alt="">
+                                        <span>Catherine</span>
+                                    </div>
+                                    <div class="solution-price free">
+                                        <a href="#"><span>Free</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="solution-thumb">
+                                <div class="solution-top">
+                                    <div class="solution-image">
+                                        <img src="~/assets1/images/courses-image4.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="solution-date">
+                                        <span><i class="fa fa-calendar"></i> 10 / 8 / 2018</span>
+                                        <span><i class="fa fa-clock-o"></i> 8 Hours</span>
+                                    </div>
+                                </div>
+
+                                <div class="solution-detail">
+                                    <h3><a href="#">Summer Kids</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="solution-info">
+                                    <div class="solution-author">
+                                        <img src="~/assets1/images/author-image1.jpg" class="img-responsive" alt="">
+                                        <span>Mark Wilson</span>
+                                    </div>
+                                    <div class="solution-price">
+                                        <a href="#"><span>USD 45</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="solution-thumb">
+                                <div class="solution-top">
+                                    <div class="solution-image">
+                                        <img src="~/assets1/images/courses-image5.jpg" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="solution-date">
+                                        <span><i class="fa fa-calendar"></i> 5 / 10 / 2018</span>
+                                        <span><i class="fa fa-clock-o"></i> 10 Hours</span>
+                                    </div>
+                                </div>
+
+                                <div class="solution-detail">
+                                    <h3><a href="#">Business &amp; Management</a></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+
+                                <div class="solution-info">
+                                    <div class="solution-author">
+                                        <img src="~/assets1/images/author-image2.jpg" class="img-responsive" alt="">
+                                        <span>Jessica</span>
+                                    </div>
+                                    <div class="solution-price free">
+                                        <a href="#"><span>Free</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Client -->
+<section id="testimonial">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title">
+                    <h2>Our Clients <small>from around the world</small></h2>
+                </div>
+
+                <div class="owl-carousel owl-theme owl-client">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="tst-image">
+                                <img src="~/assets1/images/tst-image1.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="tst-author">
+                                <h4>Jackson</h4>
+                                <span>Shopify Developer</span>
+                            </div>
+                            <p>You really do help young creative minds to get quality education and professional job search assistance. I’d recommend it to everyone!</p>
+                            <div class="tst-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="tst-image">
+                                <img src="~/assets1/images/tst-image2.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="tst-author">
+                                <h4>Camila</h4>
+                                <span>Marketing Manager</span>
+                            </div>
+                            <p>Trying something new is exciting! Thanks for the amazing law course and the great teacher who was able to make it interesting.</p>
+                            <div class="tst-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="tst-image">
+                                <img src="~/assets1/images/tst-image3.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="tst-author">
+                                <h4>Barbie</h4>
+                                <span>Art Director</span>
+                            </div>
+                            <p>Donec erat libero, blandit vitae arcu eu, lacinia placerat justo. Sed sollicitudin quis felis vitae hendrerit.</p>
+                            <div class="tst-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="tst-image">
+                                <img src="~/assets1/images/tst-image4.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="tst-author">
+                                <h4>Andrio</h4>
+                                <span>Web Developer</span>
+                            </div>
+                            <p>Nam eget mi eu ante faucibus viverra nec sed magna. Vivamus viverra sapien ex, elementum varius ex sagittis vel.</p>
+                            <div class="tst-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-12">
+                <form id="contact-form" role="form" action="" method="post">
+                    <div class="section-title">
+                        <h2>Contact us <small>we love conversations. let us talk!</small></h2>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                        <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+
+                        <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
+
+                        <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <input type="submit" class="form-control" name="send message" value="Send Message">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="contact-image">
+                    <img src="~/assets1/images/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    const clearIcon = document.querySelector(".clear-icon");
+    const searchBar = document.querySelector(".search");
+
+    searchBar.addEventListener("keyup", () => {
+        if (searchBar.value && clearIcon.style.visibility != "visible") {
+            clearIcon.style.visibility = "visible";
+        } else if (!searchBar.value) {
+            clearIcon.style.visibility = "hidden";
+        }
+    });
+
+    clearIcon.addEventListener("click", () => {
+        searchBar.value = "";
+        clearIcon.style.visibility = "hidden";
+    })
+
+</script>
